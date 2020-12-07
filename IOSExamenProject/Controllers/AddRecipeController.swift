@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddRecipeController.swift
 //  IOSExamenProject
 //
 //  Created by Kaan Calli on 07/12/2020.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AddRecipeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +16,3 @@ class ViewController: UIViewController {
 
 
 }
-
