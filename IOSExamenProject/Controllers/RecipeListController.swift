@@ -42,7 +42,7 @@ class RecipeListController: UIViewController {
         do {
             try context.save()
         } catch {
-            print("Error saving category \(error)")
+            print("Error saving recipe \(error)")
         }
         
         self.recepiTableView.reloadData()
@@ -69,7 +69,7 @@ class RecipeListController: UIViewController {
         
         alert.addTextField { (field) in
             textField = field
-            textField.placeholder = "Add a new category"
+            textField.placeholder = "Add a new Recipe"
         }
         
         present(alert, animated: true, completion: nil)
@@ -84,6 +84,13 @@ extension RecipeListController: UITableViewDelegate {
         performSegue(withIdentifier: "recipeListToDetail", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! RecipeDetailController
+        
+        if let indexPath = recepiTableView.indexPathForSelectedRow{
+            destinationVC.geselecteerdeRecept = recipes[indexPath.row]
+        }
+    }
 }
 
 extension RecipeListController: UITableViewDataSource {
@@ -97,6 +104,20 @@ extension RecipeListController: UITableViewDataSource {
         cell.textLabel?.text = recipes[indexPath.row].name
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action,view,completionHandler) in
+            
+            let recipeToRemove = self.recipes[indexPath.row]
+            
+            self.context.delete(recipeToRemove)
+
+            self.saveRecipes();
+           
+            self.fetchRecipes()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
     }
     
 }
