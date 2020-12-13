@@ -2,7 +2,7 @@
 //  Recipe+CoreDataProperties.swift
 //  IOSExamenProject
 //
-//  Created by Kaan Calli on 09/12/2020.
+//  Created by Kaan Calli on 13/12/2020.
 //
 //
 
@@ -16,8 +16,8 @@ extension Recipe {
         return NSFetchRequest<Recipe>(entityName: "Recipe")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var id: Int16
+    @NSManaged public var name: String?
     @NSManaged public var ingredients: NSSet?
 
 }

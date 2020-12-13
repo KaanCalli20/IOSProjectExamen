@@ -10,15 +10,100 @@ import CoreData
 
 class ShoppingListController: UIViewController {
 
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    @IBOutlet weak var groceryTableView: UITableView!
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var groceries = [GroceryList]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        groceryTableView.dataSource = self
+        groceryTableView.delegate = self
+        
+        
+        fetchGroceryList()
+        
+        let newGrocery = GroceryList(context: self.context)
+        newGrocery.name = "test" + String(groceries.count)
+        
+        self.groceries.append(newGrocery)
+        
+        self.saveGroceries()
+        
+    }
+    
+    func saveGroceries() {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving recipe \(error)")
+        }
+        
+        self.groceryTableView.reloadData()
+        
+    }
+    func fetchGroceryList(){
+        
+        do {
+            self.groceries = try context.fetch(GroceryList.fetchRequest())
+            DispatchQueue.main.async {
+                self.groceryTableView.reloadData()
+            }
+            
+        }catch{
+            
+        }
         
     }
 
+}
 
+
+extension ShoppingListController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        //performSegue(withIdentifier: "recipeListToDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*let destinationVC = segue.destination as! RecipeDetailController
+        
+        if let indexPath = recepiTableView.indexPathForSelectedRow{
+            destinationVC.geselecteerdeRecept = recipes[indexPath.row]
+        }
+ */
+    }
+}
+
+extension ShoppingListController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groceries.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groceryCell", for: indexPath)
+        cell.textLabel?.text = groceries[indexPath.row].name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action,view,completionHandler) in
+            
+            let groceryToRemove = self.groceries[indexPath.row]
+            
+            self.context.delete(groceryToRemove)
+
+            self.saveGroceries();
+           
+            self.fetchGroceryList()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
 }

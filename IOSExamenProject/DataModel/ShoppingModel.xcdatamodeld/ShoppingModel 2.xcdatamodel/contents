@@ -11,7 +11,7 @@
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient"/>
     </entity>
     <elements>
-        <element name="Ingredient" positionX="-54" positionY="9" width="128" height="74"/>
-        <element name="Recipe" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="Ingredient" positionX="175.6625061035156" positionY="144.6933288574219" width="128" height="88"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="121.8887939453125" height="14"/>
     </elements>
 </model>
