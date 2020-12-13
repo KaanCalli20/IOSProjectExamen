@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Ingredient {
+/*class Ingredient {
     var id: Int
     var name: String
     var amount: Double
@@ -17,4 +17,4 @@ class Ingredient {
         self.name = name
         self.amount = amount
     }
-}
+}*/

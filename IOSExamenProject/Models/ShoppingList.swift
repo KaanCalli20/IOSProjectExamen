@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ShoppingList {
+/*class ShoppingList {
     let id: Int
     var name: String
     var recipes: [Recipe]
@@ -17,4 +17,5 @@ class ShoppingList {
         self.name=name
         self.recipes=recipes
     }
-}
+}*/
+ 

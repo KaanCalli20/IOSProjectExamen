@@ -1,14 +1,14 @@
 //
-//  ShoppingListController.swift
+//  RecipeDetailController.swift
 //  IOSExamenProject
 //
-//  Created by Kaan Calli on 07/12/2020.
+//  Created by Kaan Calli on 13/12/2020.
 //
 
 import UIKit
 import CoreData
 
-class ShoppingListController: UIViewController {
+class RecipeDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 import Foundation
 
 
-class Recipe {
+/*class Recipe {
     let id: Int
     var name: String
     var ingredients: [Ingredient]
@@ -19,4 +19,4 @@ class Recipe {
         self.ingredients = ingredients
     }
 }
-
+*/
