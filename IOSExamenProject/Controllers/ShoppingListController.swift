@@ -26,12 +26,7 @@ class ShoppingListController: UIViewController {
         
         fetchGroceryList()
         
-        let newGrocery = GroceryList(context: self.context)
-        newGrocery.name = "test" + String(groceries.count)
-        
-        self.groceries.append(newGrocery)
-        
-        self.saveGroceries()
+       
         
     }
     
@@ -58,7 +53,31 @@ class ShoppingListController: UIViewController {
         }
         
     }
-
+    @IBAction func addGroceryList(_ sender: UIButton) {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New ShoppingList", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+            
+            let newGroceryList = GroceryList(context: self.context)
+            newGroceryList.name = textField.text!
+            
+            self.groceries.append(newGroceryList)
+            
+            self.saveGroceries()
+        }
+        
+        alert.addAction(action)
+        
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Add a new Grocerylist"
+        }
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -66,16 +85,22 @@ extension ShoppingListController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        //performSegue(withIdentifier: "recipeListToDetail", sender: self)
+        performSegue(withIdentifier: "groceryListToDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*let destinationVC = segue.destination as! RecipeDetailController
         
-        if let indexPath = recepiTableView.indexPathForSelectedRow{
-            destinationVC.geselecteerdeRecept = recipes[indexPath.row]
+        if segue.identifier == "groceryListToDetail" {
+         let destinationVC = segue.destination as! ShoppingListDetailController
+            if let indexPath = groceryTableView.indexPathForSelectedRow{
+                destinationVC.selectedGrocery = groceries[indexPath.row]
+            }
+        }else {
+            _ = segue.destination as! RecipeListController
         }
- */
+        
+        
+ 
     }
 }
 

@@ -20,7 +20,7 @@ class ShoppingListDetailController: UIViewController {
     
     var selectedGrocery : GroceryList? {
         didSet{
-            loadItems()
+            
         }
     }
     
@@ -37,9 +37,11 @@ class ShoppingListDetailController: UIViewController {
     
     @IBAction func editShoppingList(_ sender: UIButton) {
         
-        
+        self.performSegue(withIdentifier: "groceryDetailToEdit", sender: self)
+
         
     }
+    
     
 }
 
@@ -47,6 +49,18 @@ extension ShoppingListDetailController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "groceryDetailToEdit" {
+
+    
+            let destinationVC = segue.destination as! EditShoppingListController
+        
+            destinationVC.selectedGrocery = selectedGrocery
+        
+        }
+ 
     }
     
 }

@@ -40,7 +40,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oVr-db-aqI" kind="show" id="4gG-0e-7UY"/>
+                                    <segue destination="oVr-db-aqI" kind="show" identifier="groceryToRecipe" id="4gG-0e-7UY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc5-VC-eGy">
@@ -51,6 +51,9 @@
                                 <state key="normal" title="Add Shoppinglist">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addGroceryList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="axy-s1-hfZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -300,7 +303,7 @@
         <!--EditShoppingList-->
         <scene sceneID="yEs-BY-wG8">
             <objects>
-                <viewController title="EditShoppingList" id="xuK-CM-PD0" sceneMemberID="viewController">
+                <viewController title="EditShoppingList" id="xuK-CM-PD0" customClass="EditShoppingListController" customModule="IOSExamenProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q1e-d7-l1E">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -325,6 +328,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dv2-Ro-J3a"/>
+                    <connections>
+                        <outlet property="recipeTableView" destination="5ta-D5-byZ" id="5zK-zD-9yu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yo5-c6-btg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
