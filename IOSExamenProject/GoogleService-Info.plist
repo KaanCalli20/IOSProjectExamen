@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>654913323976-q8vkgmj6sitsoru7dbd9irlkmkfuos8v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.654913323976-q8vkgmj6sitsoru7dbd9irlkmkfuos8v</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA5pNZ7LtJj7cMMWYzGt4Siz322sQr-ghA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>654913323976</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kaancalli.IOSExamenProject</string>
+	<key>PROJECT_ID</key>
+	<string>grocerylistiosapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grocerylistiosapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:654913323976:ios:c07cda497c8a24f1e1f6fd</string>
+</dict>
+</plist>

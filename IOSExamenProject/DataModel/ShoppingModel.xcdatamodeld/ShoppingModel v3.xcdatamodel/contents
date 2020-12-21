@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GroceryList" representedClassName="GroceryList" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -16,8 +16,8 @@
         <relationship name="ingredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient"/>
     </entity>
     <elements>
+        <element name="GroceryList" positionX="-152.5328979492188" positionY="-143.0209045410156" width="78.49920654296875" height="14"/>
         <element name="Ingredient" positionX="175.6625061035156" positionY="144.6933288574219" width="128" height="88"/>
-        <element name="Recipe" positionX="-63" positionY="-18" width="121.8887939453125" height="14"/>
-        <element name="GroceryList" positionX="54" positionY="90" width="128" height="74"/>
+        <element name="Recipe" positionX="-63" positionY="-18" width="102.0175170898438" height="14"/>
     </elements>
 </model>
