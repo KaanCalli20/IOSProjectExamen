@@ -32,6 +32,7 @@
 		3E44188925922CCA004A6AE9 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44188825922CCA004A6AE9 /* WeatherService.swift */; };
 		3E44188C25922D47004A6AE9 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E44188B25922D47004A6AE9 /* WeatherDataModel.swift */; };
 		3E6041962585235E0059E441 /* RecipeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6041952585235E0059E441 /* RecipeListController.swift */; };
+		3EE7CE78259A36150099C929 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7CE77259A36150099C929 /* WeatherData.swift */; };
 		B6573FD9E0A577310CF00683 /* Pods_IOSExamenProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11689E1454D9625DD377F46D /* Pods_IOSExamenProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		3E44188825922CCA004A6AE9 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		3E44188B25922D47004A6AE9 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		3E6041952585235E0059E441 /* RecipeListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListController.swift; sourceTree = "<group>"; };
+		3EE7CE77259A36150099C929 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		6D7A45817B649A6B17F2B483 /* Pods-IOSExamenProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSExamenProject.release.xcconfig"; path = "Target Support Files/Pods-IOSExamenProject/Pods-IOSExamenProject.release.xcconfig"; sourceTree = "<group>"; };
 		BBE977329ADFBE5417FE2E0B /* Pods-IOSExamenProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSExamenProject.debug.xcconfig"; path = "Target Support Files/Pods-IOSExamenProject/Pods-IOSExamenProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				3E1B9A2B25865B1600F11A88 /* Ingredient+CoreDataProperties.swift */,
 				3E44188825922CCA004A6AE9 /* WeatherService.swift */,
 				3E44188B25922D47004A6AE9 /* WeatherDataModel.swift */,
+				3EE7CE77259A36150099C929 /* WeatherData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				3E44188625922C5C004A6AE9 /* WeatherController.swift in Sources */,
 				3E32504E258676F700CAAF0B /* GroceryList+CoreDataClass.swift in Sources */,
 				3E1B9A2F25865B1600F11A88 /* Ingredient+CoreDataProperties.swift in Sources */,
+				3EE7CE78259A36150099C929 /* WeatherData.swift in Sources */,
 				3E44188325922044004A6AE9 /* LoginController.swift in Sources */,
 				3E44188025921E03004A6AE9 /* RegisterController.swift in Sources */,
 				3E6041962585235E0059E441 /* RecipeListController.swift in Sources */,

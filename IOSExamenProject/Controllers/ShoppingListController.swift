@@ -97,7 +97,13 @@ extension ShoppingListController: UITableViewDelegate {
                 destinationVC.selectedGrocery = groceries[indexPath.row]
             }
         }else {
-            _ = segue.destination as! RecipeListController
+            if segue.identifier == "groceryToWeather" {
+                _ = segue.destination as! WeatherController
+
+            }else{
+                _ = segue.destination as! RecipeListController
+
+            }
         }
         
         
